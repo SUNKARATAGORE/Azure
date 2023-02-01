@@ -28,34 +28,9 @@ strategy:
 
 
 steps:
-
-
-- task: UsePythonVersion@0
-
-
+- task: CmdLine@2
   inputs:
-
-
-    versionSpec: '$(python.version)'
-
-
-  displayName: 'Use Python $(python.version)'
-
-
-- script: python "add.py"
-
-
-
-- task: PythonScript@0
-
-
-  inputs:
-
-
-    scriptSource: 'inline'
-
-
     script: |
-      print('AZURE PIPELINE')
-      print('CONTINUOUS INTEGRATION & CONTINUOUS DEPLOYMENT')
-
+      Javac Add.java
+      
+      Java Add
